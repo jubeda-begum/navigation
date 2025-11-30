@@ -1,7 +1,16 @@
-const heading = document.getElementById("mainHeading");
-heading.textContent = "Welcome to the DOM World";
-heading.style.color = "blue";   
-const firstPara = document.getElementsByClassName("info")[0];
-firstPara.style.backgroundColor = "yellow";
-const boxDiv = document.querySelector(".box");
-boxDiv.style.backgroundColor = "lightgreen";
+let list = document.querySelector("#myList");
+let btn = document.querySelector("#addBtn");
+btn.addEventListener("click", function () {
+    let newLi = document.createElement("li");
+    newLi.innerText = "New Item";
+    let count = list.children.length + 1;
+    if (count % 2 !== 0) {
+        newLi.style.fontWeight = "bold";
+        newLi.style.color = "blue";
+    }
+    else {
+        newLi.style.fontStyle = "italic";
+        newLi.style.color = "red";
+    }
+    list.appendChild(newLi);
+});
